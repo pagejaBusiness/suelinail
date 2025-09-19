@@ -8,7 +8,10 @@ function App() {
   return (
     <div>
       <Navbar />
-      <section id="hero">
+      <section
+        id="hero"
+        className="pt-16 md:pt-20 scroll-mt-16 md:scroll-mt-20"
+      >
         <Herosection />
       </section>
     </div>
