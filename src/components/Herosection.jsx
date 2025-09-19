@@ -1,7 +1,10 @@
 function Herosection() {
   return (
-    <div>
-      <h1>Herosection</h1>
+    <div className="bg-rose-50 h-100 flex items-center justify-center flex-col text-center p-4">
+      <h1>
+        Welcome to SueLiNail - Your Ultimate Destination for Nail Art and Care!
+      </h1>
+      <h2></h2>
     </div>
   );
 }
