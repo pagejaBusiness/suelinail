@@ -5,7 +5,11 @@ export default {
     extend: {
       colors: {
         black: "#000000", //para textos e contrastes fortes
-        white: "#ffffff", //para fundos e respiros
+        blackForest: "#0B0F0C", //alternativa para preto
+        white: {
+          100: "#ffffff",
+          200: "#f8f8ff ",
+        }, //para fundos e respiros
         pink: {
           100: "#E91E63", //para botoes e destaques
           200: "#F06292", // para hover e variações suaves
