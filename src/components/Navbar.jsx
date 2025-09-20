@@ -2,15 +2,22 @@ import { useState } from "react";
 import { FiHome, FiUser, FiImage, FiMail, FiStar } from "react-icons/fi";
 
 const navItens = [
+  { name: "Home", link: "#hero", icon: FiStar },
+  { name: "Galeria", link: "#gallery", icon: FiImage },
   { name: "Serviços", link: "#services", icon: FiHome },
   { name: "Sobre", link: "#about", icon: FiUser },
-  { name: "Galeria", link: "#gallery", icon: FiImage },
   { name: "Contato", link: "#contact", icon: FiMail },
-  { name: "Avaliações", link: "#reviews", icon: FiStar },
 ];
 
 function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
+
+  const handleScroll = (id) => {
+    const el = document.querySelector(id);
+    if (el) {
+      el.scrollIntoView({ behavior: "smooth" });
+    }
+  };
 
   return (
     <nav className="fixed w-full top-0 z-50 h-16 md:h-20 bg-blackForest/90 backdrop-blur-md shadow-lg">
@@ -30,6 +37,10 @@ function Navbar() {
             <a
               key={index}
               href={item.link}
+              onClick={(e) => {
+                e.preventDefault();
+                handleScroll(item.link);
+              }}
               className="relative font-medium text-gray-200 transition-all duration-500 hover:text-transparent hover:bg-gradient-to-r hover:from-pink-500 hover:to-rose-500 hover:bg-clip-text after:content-[''] after:absolute after:left-0 after:bottom-0 after:w-0 after:h-[2px] after:bg-gradient-to-r after:from-pink-500 after:to-rose-500 after:transition-all after:duration-500 hover:after:w-full"
             >
               {item.name}
@@ -78,7 +89,7 @@ function Navbar() {
         </div>
       </div>
 
-      {/* Dropdown Mobile Premium */}
+      {/* Dropdown Mobile */}
       <div className="md:hidden relative">
         <div
           className={`absolute top-full left-0 w-full overflow-hidden rounded-b-2xl
@@ -98,7 +109,11 @@ function Navbar() {
                 <a
                   key={index}
                   href={item.link}
-                  onClick={() => setIsOpen(false)}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    handleScroll(item.link);
+                    setIsOpen(false);
+                  }}
                   className={`w-5/6 flex items-center justify-center gap-2 px-4 py-3 rounded-xl font-medium
                     text-blackForest transform transition-all duration-500
                     ${
@@ -110,15 +125,10 @@ function Navbar() {
                     relative`}
                   style={{ transitionDelay: `${index * 75}ms` }}
                 >
-                  {/* Ícone */}
                   <Icon className="w-5 h-5 text-pink-500" />
-
-                  {/* Nome com gradiente animado */}
                   <span className="relative text-blackForest hover:text-transparent hover:bg-gradient-to-r hover:from-pink-500 hover:to-rose-500 hover:bg-clip-text transition-all duration-300">
                     {item.name}
                   </span>
-
-                  {/* Fundo gradiente animado (opcional) */}
                   <span className="absolute inset-0 rounded-xl opacity-0 hover:opacity-20 bg-gradient-to-r from-pink-400 to-rose-400 transition-all duration-300"></span>
                 </a>
               );
