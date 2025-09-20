@@ -35,7 +35,7 @@ function Herosection() {
   }, [index]);
 
   return (
-    <div className="relative w-full h-[80vh] flex items-center justify-center overflow-hidden">
+    <div className="relative w-full h-[80vh] flex items-center justify-center overflow-hidden p-10">
       <AnimatePresence mode="wait">
         <motion.img
           key={images[index].url}
