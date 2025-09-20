@@ -1,14 +1,26 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import Img1 from "../assets/Images/Slider.webp";
-import Img2 from "../assets/Images/Slider2.webp";
-import Img3 from "../assets/Images/Slider3.webp";
-import Img4 from "../assets/Images/Slider4.webp";
-import Img5 from "../assets/Images/Slider5.webp";
-import Img6 from "../assets/Images/Slider6.webp";
 
-import Sueli from "../assets/Images/Sueli.webp";
-const images = [Img1, Img2, Img3, Img4, Img5, Img6];
+const images = [
+  {
+    url: "https://res.cloudinary.com/pageja/image/upload/v1758332724/Slider2_cbagbg.webp",
+  },
+  {
+    url: "https://res.cloudinary.com/pageja/image/upload/v1758332721/Slider4_spvwva.webp",
+  },
+  {
+    url: "https://res.cloudinary.com/pageja/image/upload/v1758332717/Slider5_cmtxwy.webp",
+  },
+  {
+    url: "https://res.cloudinary.com/pageja/image/upload/v1758332716/Slider3_yak8uo.webp",
+  },
+  {
+    url: "https://res.cloudinary.com/pageja/image/upload/v1758332715/Slider6_hoahvg.webp",
+  },
+  {
+    url: "https://res.cloudinary.com/pageja/image/upload/v1758332715/Slider_mgoenw.webp",
+  },
+];
 
 function Herosection() {
   const [index, setIndex] = useState(0);
@@ -23,22 +35,21 @@ function Herosection() {
   }, [index]);
 
   return (
-    <div className="relative w-full flex items-center justify-center overflow-hidden px-8 py-8">
+    <div className="relative w-full h-[80vh] flex items-center justify-center overflow-hidden">
       <AnimatePresence mode="wait">
-        <motion.div
-          key={index}
+        <motion.img
+          key={images[index].url}
+          src={images[index].url}
+          alt={`Slide ${index + 1}`}
+          loading="lazy"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           transition={{ duration: 1 }}
-          className="absolute inset-0 w-full h-full"
-          style={{
-            backgroundImage: `url(${images[index]})`,
-            backgroundSize: "cover",
-            backgroundPosition: "center",
-          }}
+          className="absolute inset-0 w-full h-full object-cover"
         />
       </AnimatePresence>
+
       <motion.div
         className="md:flex flex-row items-center w-auto h-auto z-10 gap-40 "
         initial={{ opacity: 0, y: 60 }}
@@ -60,7 +71,7 @@ function Herosection() {
         </h1>
         <div className=" flex items-center justify-center md:w-100 h-100 flex items-center justify-center">
           <img
-            src={Sueli}
+            src="https://res.cloudinary.com/pageja/image/upload/v1758331628/logo4_o3y8sj.webp"
             alt="Sueli"
             className="w-full h-full object-contain"
             style={{

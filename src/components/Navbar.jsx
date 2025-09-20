@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { FiHome, FiUser, FiImage, FiMail, FiStar } from "react-icons/fi";
-import logo from "../assets/logo/logo4.webp";
 
 const navItens = [
   { name: "Serviços", link: "#services", icon: FiHome },
@@ -18,7 +17,11 @@ function Navbar() {
       <div className="max-w-7xl mx-auto flex justify-between items-center p-4 md:px-8 h-full">
         {/* Logo */}
         <div className="h-10 md:h-16 w-auto">
-          <img src={logo} alt="Logo" className="h-full w-auto object-contain" />
+          <img
+            src="https://res.cloudinary.com/pageja/image/upload/v1758331628/logo4_o3y8sj.webp"
+            alt="Logo"
+            className="h-full w-auto object-contain"
+          />
         </div>
 
         {/* Itens Desktop */}
