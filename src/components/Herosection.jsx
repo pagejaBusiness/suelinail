@@ -69,11 +69,11 @@ function Herosection() {
             autocuidado, confiança e estilo.
           </span>
         </h1>
-        <div className=" flex items-center justify-center md:w-100 h-100 flex items-center justify-center">
+        <div className="w-100 h-100 flex items-center justify-center">
           <img
             src="https://res.cloudinary.com/pageja/image/upload/v1758331628/logo4_o3y8sj.webp"
             alt="Sueli"
-            className="w-full h-full object-contain"
+            className="w-full h-full object-contain mt-5"
             style={{
               filter: "drop-shadow(0 0 12px #ec4899)",
             }}
