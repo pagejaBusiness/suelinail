@@ -28,6 +28,12 @@ const images = [
   {
     src: "https://res.cloudinary.com/pageja/image/upload/v1758401582/SaveInsta.to_497169618_2525275487819044_9184728013176056397_n_i9govu.jpg",
   },
+  {
+    src: "https://res.cloudinary.com/pageja/image/upload/v1758406826/SaveInsta.to_496948415_1622499785819194_9062307681890112228_n_gdzi0h.jpg",
+  },
+  {
+    src: "https://res.cloudinary.com/pageja/image/upload/v1758407050/502249563_1015273014050675_3822861553971152401_n_ew2rs2.jpg",
+  },
 ];
 
 export default function Gallery() {
@@ -41,7 +47,13 @@ export default function Gallery() {
   );
 
   return (
-    <section className="bg-rose-100 py-16 px-6">
+    <section
+      className="bg-cover bg-center bg-no-repeat py-16 px-6"
+      style={{
+        backgroundImage:
+          "url('https://res.cloudinary.com/pageja/image/upload/v1758408824/Sem_T%C3%ADtulo-1_htufvw.png')",
+      }}
+    >
       <div className="max-w-6xl mx-auto">
         {/* Título */}
         <h2 className="text-center text-4xl md:text-5xl font-extrabold mb-12 tracking-tight">
