@@ -48,16 +48,16 @@ export default function Gallery() {
 
   return (
     <section
-      className="bg-cover bg-center bg-no-repeat py-16 px-6"
+      className="bg-cover bg-center bg-no-repeat px-6"
       style={{
         backgroundImage:
-          "url('https://res.cloudinary.com/pageja/image/upload/v1758408824/Sem_T%C3%ADtulo-1_htufvw.png')",
+          "url('https://res.cloudinary.com/pageja/image/upload/v1758409998/Sem_T%C3%ADtulo-1_htufvw.png')",
       }}
     >
       <div className="max-w-6xl mx-auto">
         {/* Título */}
         <h2 className="text-center text-4xl md:text-5xl font-extrabold mb-12 tracking-tight">
-          <span className="bg-gradient-to-r from-pink-400 via-purple-500 to-pink-600 bg-clip-text text-transparent inline-block animate-gradient glow-text">
+          <span className="mt-4 bg-gradient-to-r from-pink-400 via-purple-500 to-pink-600 bg-clip-text text-transparent inline-block animate-gradient glow-text">
             Nossa Galeria
           </span>
         </h2>
