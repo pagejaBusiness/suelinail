@@ -5,7 +5,7 @@ import Navbar from "./components/Navbar";
 import Herosection from "./components/Herosection";
 import Gallery from "./components/Gallery";
 import About from "./components/About";
-import Services from "./components/Serviços";
+import Services from "./components/Services";
 
 function App() {
   return (
