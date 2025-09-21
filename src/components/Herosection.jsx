@@ -3,22 +3,22 @@ import { motion, AnimatePresence } from "framer-motion";
 
 const images = [
   {
-    url: "https://res.cloudinary.com/pageja/image/upload/v1758332724/Slider2_cbagbg.webp",
+    url: "https://res.cloudinary.com/pageja/image/upload/v1758416088/WhatsApp_Image_2025-09-20_at_10.38.12_pmazjx.png",
   },
   {
-    url: "https://res.cloudinary.com/pageja/image/upload/v1758332721/Slider4_spvwva.webp",
+    url: "https://res.cloudinary.com/pageja/image/upload/v1758416458/WhatsApp_Image_2025-09-20_at_10.44.46_wmqzq7.png",
   },
   {
-    url: "https://res.cloudinary.com/pageja/image/upload/v1758332717/Slider5_cmtxwy.webp",
+    url: "https://res.cloudinary.com/pageja/image/upload/v1758407280/ChatGPT_Image_Sep_20_2025_07_26_54_PM_kzgtdt.png",
   },
   {
-    url: "https://res.cloudinary.com/pageja/image/upload/v1758332716/Slider3_yak8uo.webp",
+    url: "https://res.cloudinary.com/pageja/image/upload/v1758410071/ChatGPT_Image_Sep_20_2025_08_13_32_PM_rqtai8.png",
   },
   {
-    url: "https://res.cloudinary.com/pageja/image/upload/v1758332715/Slider6_hoahvg.webp",
+    url: "https://res.cloudinary.com/pageja/image/upload/v1758410578/3dcd12a3-30d5-47f6-9258-4cd41440cd6c_wqynso.png",
   },
   {
-    url: "https://res.cloudinary.com/pageja/image/upload/v1758332715/Slider_mgoenw.webp",
+    url: "https://res.cloudinary.com/pageja/image/upload/v1758410863/ChatGPT_Image_Sep_20_2025_08_26_45_PM_ybqn0q.png",
   },
 ];
 
