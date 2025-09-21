@@ -6,7 +6,19 @@ import "yet-another-react-lightbox/styles.css";
 
 const images = [
   {
-    src: "https://res.cloudinary.com/pageja/image/upload/v1758400600/SaveInsta.to_503887556_1065219155521209_3698890969661897329_n_kgucwt.jpg",
+    src: "https://res.cloudinary.com/pageja/image/upload/v1758468359/IMG-20250921-WA0123_qyqagr.jpg",
+  },
+  {
+    src: "https://res.cloudinary.com/pageja/image/upload/v1758468160/IMG-20250921-WA0114_py2mfd.jpg",
+  },
+  {
+    src: "https://res.cloudinary.com/pageja/image/upload/v1758468153/IMG-20250921-WA0118_fqcpw9.jpg",
+  },
+  {
+    src: "https://res.cloudinary.com/pageja/image/upload/v1758468143/IMG-20250921-WA0113_fzhrq5.jpg",
+  },
+  {
+    src: "https://res.cloudinary.com/pageja/image/upload/v1758468167/IMG-20250921-WA0120_djaf9g.jpg",
   },
   {
     src: "https://res.cloudinary.com/pageja/image/upload/v1758400579/SaveInsta.to_495690420_991812413097097_7180062257730694013_n_k7xoi6.jpg",
