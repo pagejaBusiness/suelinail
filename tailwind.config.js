@@ -17,6 +17,7 @@ export default {
         rose: {
           100: "#F8E1E7", // fundos suaves
           200: "#E8B7C8", // para detalhes, bordas ou ícones
+          500: "#F43B5E",
         },
         gray: {
           100: "#4A4A4A", // texto secundário
