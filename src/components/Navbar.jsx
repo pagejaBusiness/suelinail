@@ -3,9 +3,9 @@ import { FiHome, FiUser, FiImage, FiMail, FiStar } from "react-icons/fi";
 
 const navItens = [
   { name: "Home", link: "#hero", icon: FiStar },
+  { name: "Sobre", link: "#about", icon: FiUser },
   { name: "Galeria", link: "#gallery", icon: FiImage },
   { name: "Serviços", link: "#services", icon: FiHome },
-  { name: "Sobre", link: "#about", icon: FiUser },
   { name: "Contato", link: "#contact", icon: FiMail },
 ];
 

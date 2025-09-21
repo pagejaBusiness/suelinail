@@ -1,4 +1,5 @@
-// src/components/Gallery.jsx
+"use client";
+
 import { useState, useMemo } from "react";
 import Lightbox from "yet-another-react-lightbox";
 import "yet-another-react-lightbox/styles.css";
@@ -28,12 +29,6 @@ const images = [
   {
     src: "https://res.cloudinary.com/pageja/image/upload/v1758401582/SaveInsta.to_497169618_2525275487819044_9184728013176056397_n_i9govu.jpg",
   },
-  {
-    src: "https://res.cloudinary.com/pageja/image/upload/v1758406826/SaveInsta.to_496948415_1622499785819194_9062307681890112228_n_gdzi0h.jpg",
-  },
-  {
-    src: "https://res.cloudinary.com/pageja/image/upload/v1758407050/502249563_1015273014050675_3822861553971152401_n_ew2rs2.jpg",
-  },
 ];
 
 export default function Gallery() {
@@ -48,28 +43,45 @@ export default function Gallery() {
 
   return (
     <section
-      className="bg-cover bg-center bg-no-repeat px-6"
+      className="bg-cover bg-center bg-no-repeat px-6 py-12 min-h-screen"
       style={{
         backgroundImage:
           "url('https://res.cloudinary.com/pageja/image/upload/v1758409998/Sem_T%C3%ADtulo-1_htufvw.png')",
       }}
     >
-      <div className="max-w-6xl mx-auto">
-        {/* Título */}
-        <h2 className="text-center text-4xl md:text-5xl font-extrabold mb-12 tracking-tight">
-          <span className="mt-4 bg-gradient-to-r from-pink-400 via-purple-500 to-pink-600 bg-clip-text text-transparent inline-block animate-gradient glow-text">
-            Nossa Galeria
-          </span>
-        </h2>
+      <div className="max-w-7xl mx-auto">
+        <div className="text-center mb-16 overflow-hidden">
+          <h1 className="text-6xl md:text-8xl font-extrabold text-white-100 relative inline-block animate-fade-slide">
+            Galeria
+          </h1>
+          <p className="text-lg md:text-xl text-gray-300 font-medium tracking-wide max-w-2xl mx-auto mt-4">
+            Uma coleção visual que captura momentos únicos e memórias especiais
+          </p>
 
-        {/* Grid estilo Pinterest */}
-        <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2 md:gap-4 auto-rows-auto">
+          <style jsx>{`
+            @keyframes fadeSlide {
+              0% {
+                opacity: 0;
+                transform: translateX(-50px);
+              }
+              100% {
+                opacity: 1;
+                transform: translateX(0);
+              }
+            }
+            .animate-fade-slide {
+              animation: fadeSlide 1s ease forwards;
+            }
+          `}</style>
+        </div>
+
+        <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-3 md:gap-4 auto-rows-auto">
           {images.map((img, i) => {
             const span = rowSpans[i];
             return (
               <div
                 key={i}
-                className="relative overflow-hidden rounded-xl shadow-lg group cursor-pointer transition-all duration-500 hover:-translate-y-1 hover:shadow-2xl"
+                className="relative overflow-hidden rounded-2xl shadow-lg group cursor-pointer transition-all duration-700 hover:-translate-y-2 hover:shadow-2xl hover:shadow-purple-500/25"
                 style={{ gridRowEnd: `span ${span}` }}
                 onClick={() => {
                   setIndex(i);
@@ -77,30 +89,48 @@ export default function Gallery() {
                 }}
               >
                 <img
-                  src={img.src}
+                  src={img.src || "/placeholder.svg"}
                   alt={`galeria-${i}`}
                   loading="lazy"
-                  className="w-full h-full object-cover transform transition-all duration-500 group-hover:scale-105"
+                  className="w-full h-full object-cover transform transition-all duration-700 group-hover:scale-110"
                 />
-                <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-50 transition-opacity duration-500 rounded-xl"></div>
+                <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-all duration-500 rounded-2xl"></div>
+                <div className="absolute inset-0 ring-2 ring-transparent group-hover:ring-purple-400/50 rounded-2xl transition-all duration-500"></div>
+
+                <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-500">
+                  <div className="bg-white/20 backdrop-blur-sm rounded-full p-3 transform scale-75 group-hover:scale-100 transition-transform duration-300">
+                    <svg
+                      className="w-6 h-6 text-white"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7"
+                      />
+                    </svg>
+                  </div>
+                </div>
               </div>
             );
           })}
         </div>
       </div>
 
-      {/* Lightbox */}
       {open && (
         <Lightbox
           open={open}
           index={index}
           close={() => setOpen(false)}
           slides={images.map((img) => ({ src: img.src }))}
-          animation={{ fade: 300 }}
+          animation={{ fade: 400 }}
           styles={{
             container: {
-              backgroundColor: "rgba(0,0,0,0.6)",
-              backdropFilter: "blur(5px)",
+              backgroundColor: "rgba(0,0,0,0.85)",
+              backdropFilter: "blur(10px)",
             },
           }}
           render={{
@@ -108,18 +138,18 @@ export default function Gallery() {
               <div
                 style={{
                   ...style,
-                  backgroundColor: "rgba(0,0,0,0.6)",
-                  backdropFilter: "blur(5px)",
+                  backgroundColor: "rgba(0,0,0,0.85)",
+                  backdropFilter: "blur(10px)",
                 }}
               />
             ),
             renderNext: () => (
-              <button className="absolute right-3 top-1/2 -translate-y-1/2 text-white text-4xl font-bold z-50 p-2">
+              <button className="absolute right-4 top-1/2 -translate-y-1/2 text-white hover:text-purple-400 text-4xl font-bold z-50 p-3 rounded-full bg-black/20 hover:bg-black/40 backdrop-blur-sm transition-all duration-300">
                 &#10095;
               </button>
             ),
             renderPrev: () => (
-              <button className="absolute left-3 top-1/2 -translate-y-1/2 text-white text-4xl font-bold z-50 p-2">
+              <button className="absolute left-4 top-1/2 -translate-y-1/2 text-white hover:text-purple-400 text-4xl font-bold z-50 p-3 rounded-full bg-black/20 hover:bg-black/40 backdrop-blur-sm transition-all duration-300">
                 &#10094;
               </button>
             ),

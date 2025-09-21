@@ -5,6 +5,7 @@ import Navbar from "./components/Navbar";
 import Herosection from "./components/Herosection";
 import Gallery from "./components/Gallery";
 import About from "./components/About";
+import Services from "./components/Serviços";
 
 function App() {
   return (
@@ -16,11 +17,14 @@ function App() {
       >
         <Herosection />
       </section>
-      <section>
+      <section id="about">
         <About />
       </section>
       <section id="gallery">
         <Gallery />
+      </section>
+      <section id="services">
+        <Services />
       </section>
     </div>
   );
