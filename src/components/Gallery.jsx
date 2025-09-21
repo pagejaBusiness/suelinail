@@ -6,6 +6,9 @@ import "yet-another-react-lightbox/styles.css";
 
 const images = [
   {
+    src: "https://res.cloudinary.com/pageja/image/upload/v1758468713/IMG-20250921-WA0121_z1ubfo.jpg",
+  },
+  {
     src: "https://res.cloudinary.com/pageja/image/upload/v1758468359/IMG-20250921-WA0123_qyqagr.jpg",
   },
   {
@@ -34,9 +37,6 @@ const images = [
   },
   {
     src: "https://res.cloudinary.com/pageja/image/upload/v1758400528/504210504_1716356482314513_3942485151461694358_n_wzhe48.jpg",
-  },
-  {
-    src: "https://res.cloudinary.com/pageja/image/upload/v1758400517/502710624_1253398689822240_532341318339273819_n_kbkdcg.jpg",
   },
   {
     src: "https://res.cloudinary.com/pageja/image/upload/v1758401582/SaveInsta.to_497169618_2525275487819044_9184728013176056397_n_i9govu.jpg",
